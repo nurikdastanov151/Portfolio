@@ -18,7 +18,6 @@
             margin: 0;
         }
 
-
         nav {
             position: fixed;
             top: 0;
@@ -54,22 +53,44 @@
             justify-content: center;
             background: radial-gradient(circle, #2d1b4e 0%, #0b0f19 100%);
             text-align: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+            transition: 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.6);
         }
 
         .container {
-            max-width: 100%;
+            max-width: 1000px;
             margin: auto;
-            padding: 100px 20px;
+            padding: 60px 20px;
         }
 
         h2 {
             border-left: 5px solid #7c3aed;
             padding-left: 15px;
             margin-bottom: 30px;
+            margin-top: 40px;
         }
 
         #projects h2,
-        #bots h2 {
+        #bots h2,
+        #services h2 {
             grid-column: 1 / -1;
             margin-bottom: 10px;
             border-left: 5px solid #7c3aed;
@@ -77,13 +98,13 @@
         }
 
         #projects,
-        #bots {
+        #bots,
+        #services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
-
 
         .card {
             background: rgba(30, 41, 59, 0.5);
@@ -99,21 +120,49 @@
 
         .card:hover {
             border-color: #7c3aed;
+            background: rgba(30, 41, 59, 0.7);
         }
 
         .tag {
             display: block;
-            background: #4f46e5;
+            background: #7c3aed;
             padding: 10px;
             border-radius: 10px;
             text-align: center;
             margin-top: 15px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 100px 20px;
+        .tag:hover {
+            background: #6d28d9;
+        }
+
+        .tag a {
+            color: #fff !important;
+            display: block;
+            width: 100%;
+        }
+
+        .project-link {
+            color: #a5b4fc;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: #34d399;
+            font-weight: bold;
+            margin: 10px 0;
         }
 
         a {
@@ -131,17 +180,15 @@
             box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
         }
 
-
         @media (max-width: 768px) {
-
             .container {
                 width: 100%;
                 padding: 20px 10px;
             }
 
             #projects,
-            #bots {
-                display: grid;
+            #bots,
+            #services {
                 grid-template-columns: 1fr;
                 gap: 20px;
                 padding: 0 10px;
@@ -153,7 +200,6 @@
                 box-sizing: border-box;
             }
 
-
             nav {
                 display: flex;
                 flex-direction: row;
@@ -164,9 +210,9 @@
 
             nav a {
                 margin: 5px;
-                font-size: 1rem;
+                font-size: 0.9rem;
+                padding: 6px 10px;
             }
-
 
             .hero h1 {
                 font-size: 1.8rem;
@@ -183,23 +229,48 @@
 
     <nav>
         <a href="#about">Men haqimda</a>
+        <a href="#services">Xizmatlar</a>
         <a href="#projects">Loyihalar</a>
         <a href="#bots">Telegram Botlar</a>
         <a href="#contact">Bog'lanish</a>
     </nav>
 
     <section class="hero">
-        <img class="profile-img" src="PROFIL.jpg" alt="">
+        <img class="profile-img" src="PROFIL.jpg" alt="Javohir Anvarov">
         <h1>Javohir Anvarov</h1>
-        <p>IT talabasi va Web Dasturchi</p>
+        <p>IT mutaxassisi — Biznesingizni avtomatlashtiruvchi Veb va Bot dasturchi</p>
+        <a href="#contact" class="cta-btn">Bepul maslahat olish</a>
     </section>
 
     <div class="container">
         <section id="about">
             <h2>Men haqimda</h2>
             <div class="card">
-                <p>IT sohasida 1 yillik tajribaga ega dasturchiman. Web Development va Telegram botlar yaratish
-                    yo'nalishida faoliyat yuritaman.</p>
+                <p>IT sohasida amaliy tajribaga ega dasturchiman. Kichik va o'rta bizneslar (go'zallik salonlari, logistika (cargo) firmalari, do'konlar va o'quv markazlari) uchun mijozlar oqimini tartibga soluvchi mukammal veb-saytlar hamda Telegram botlar tizimini noldan boshlab qurib beraman.</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>Xizmatlar va Narxlar</h2>
+            <div class="card">
+                <h3>Landing Page (Vizitka sayt)</h3>
+                <p>Sizning mahsulotingiz yoki xizmatlaringizni internetda chiroyli va tezkor ko'rsatuvchi bir sahifali zamonaviy veb-sayt.</p>
+                <div class="price">dan $80</div>
+                <a href="https://t.me/Javo_2010_hir" target="_blank" class="tag" style="color: white;">Buyurtma berish</a>
+            </div>
+
+            <div class="card">
+                <h3>Avtomatlashtirilgan Telegram Bot</h3>
+                <p>Mijozlarni avtomat qabul qilish, buyurtma olish va CRM tizimiga ega mukammal boshqaruv botlari.</p>
+                <div class="price">dan $100</div>
+                <a href="https://t.me/Javo_2010_hir" target="_blank" class="tag" style="color: white;">Buyurtma berish</a>
+            </div>
+
+            <div class="card">
+                <h3>Kombinatsiya (Sayt + Bot)</h3>
+                <p>Mijozlaringiz uchun ham veb-sayt, ham Telegram orqali xizmatlardan foydalanish imkonini beruvchi to'liq biznes yechim.</p>
+                <div class="price">dan $150</div>
+                <a href="https://t.me/Javo_2010_hir" target="_blank" class="tag" style="color: white;">Ekspress buyurtma</a>
             </div>
         </section>
 
@@ -208,63 +279,57 @@
             <div class="card">
                 <h3>Steam Clone</h3>
                 <p>HTML, CSS va Javascript yordamida yaratilgan zamonaviy veb-do'kon interfeysi.</p>
-                <a href="https://nurikdastanov151.github.io/Steam-Clone/" target="_blank" style="color: #7c3aed;">Saytni
-                    ko'rish</a>
+                <a href="https://nurikdastanov151.github.io/Steam-Clone/" target="_blank" class="project-link">Saytni ko'rish &rarr;</a>
             </div>
 
             <div class="card">
                 <h3>Britlex</h3>
-                <p>Britlex - tillarni o'rganish platformasi uchun zamonaviy interfeys.</p>
-                <a href="https://nurikdastanov151.github.io/Britlex/" target="_blank" style="color: #7c3aed;">Saytni
-                    ko'rish</a>
+                <p>Britlex - tillarni o'rganish platformasi uchun zamonaviy va adaptiv interfeys.</p>
+                <a href="https://nurikdastanov151.github.io/Britlex/" target="_blank" class="project-link">Saytni ko'rish &rarr;</a>
             </div>
 
             <div class="card">
-                <h3>Artifical-Intelligence</h3>
-                <p>Ushbu loyiha sun'iy intellekt imkoniyatlarini maksimal darajada ochib beruvchi zamonaviy va
-                    minimalistik interfeysga ega.</p>
-                <a href="https://nurikdastanov151.github.io/Artifical-Intelligence/" target="_blank"
-                    style="color: #7c3aed;">Saytni ko'rish</a>
+                <h3>Artificial-Intelligence</h3>
+                <p>Sun'iy intellekt imkoniyatlarini maksimal darajada ochib beruvchi yuqori texnologiyali minimalistik interfeys.</p>
+                <a href="https://nurikdastanov151.github.io/Artifical-Intelligence/" target="_blank" class="project-link">Saytni ko'rish &rarr;</a>
             </div>
 
             <div class="card">
                 <h3>Gitpot</h3>
-                <p>Ushbu loyiha interfeysi ishlab chiqish jarayonini optimallashtirishga qaratilgan bo'lib, har bir
-                    harakat foydalanuvchi tajribasini (UX) yaxshilash va kodlash samaradorligini oshirish uchun puxta
-                    ishlab chiqilgan.</p>
-                <a href="https://nurikdastanov151.github.io/Gitpot/" target="_blank" style="color: #7c3aed;">Saytni
-                    ko'rish</a>
+                <p>Foydalanuvchi tajribasini (UX) yaxshilash va kodlash samaradorligini oshirish uchun puxta ishlab chiqilgan interfeys.</p>
+                <a href="https://nurikdastanov151.github.io/Gitpot/" target="_blank" class="project-link">Saytni ko'rish &rarr;</a>
             </div>
         </section>
 
         <section id="bots">
-            <h2>Telegram Botlar</h2>
+            <h2>Telegram Botlar (Real Ishlar)</h2>
             <div class="card">
-                <h3>Dilya Ledy</h3>
-                <p>Ushbu loyiha go'zallik saloni uchun ishlab chiqilgan avtomatlashtirilgan qabul qilish tizimi bo'lib,
-                    mijozlar bilan muloqotni samarali tashkil etuvchi qulay interfeysga ega.</p>
-                <span class="tag"> <a href="https://t.me/Dilya_ledy_bot" target="_blank" style="color: #4bf707;">Botga
-                        kirish</a>
-                </span>
+                <h3>Dilya Ledy Salon Bot</h3>
+                <p>Go'zallik saloni uchun ishlab chiqilgan avtomatlashtirilgan qabul qilish tizimi. Mijozlar navbatini to'g'ri taqsimlaydi.</p>
+                <a href="https://t.me/Dilya_ledy_bot" target="_blank" class="tag" style="color: white;">Botni sinab ko'rish</a>
             </div>
 
             <div class="card">
                 <h3>MineCrafter_UzBot</h3>
-                <p>Ushbu loyiha Minecraft o'yinchilari uchun turli xil modlar va qo'shimcha resurslarni tezkor izlash
-                    hamda yuklab olish imkonini beruvchi qulay interfeysga ega.
-                </p>
-                <span class="tag"><a href="https://t.me/MineCrafter_UzBot" target="_blank" style="color: #4bf707;">Botga
-                        kirish</a></span>
+                <p>Minecraft o'yinchilari uchun turli xil modlar va qo'shimcha resurslarni tezkor izlash hamda yuklab olish boti.</p>
+                <a href="https://t.me/MineCrafter_UzBot" target="_blank" class="tag" style="color: white;">Botni sinab ko'rish</a>
             </div>
+        </section>
 
+        <section id="reviews">
+            <h2>Mijozlar fikri</h2>
+            <div class="card">
+                <p><strong>"Dilya Ledy" go'zallik saloni rahbariyati:</strong></p>
+                <p style="font-style: italic; color: #cbd5e1;">"Javohir bizga Telegram bot yaratib berganidan keyin qo'lda daftarga yozib o'tirishga hojat qolmadi. Mijozlar o'zlari mustaqil ro'yxatdan o'tishyapti. Biznesimiz vaqti va puli tejaldi. Tavsiya qilamiz!"</p>
+            </div>
         </section>
 
         <section id="contact">
-            <h2>Bog'lanish</h2>
-            <div class="card" style="text-align: center;">
-                <p>Telegram orqali istalgan vaqtda bog'lanishingiz mumkin.</p>
-                <a href="https://t.me/Javo_2010_hir"
-                    style="background:#7c3aed; padding:10px 20px; border-radius:20px; color:white; text-decoration:none;">@Javo_2010_hir</a>
+            <h2>Loyihangizni Muhokama Qilamiz</h2>
+            <div class="card" style="text-align: center; border-color: #7c3aed;">
+                <p>Sizga ham biznesingizni avtomatlashtiradigan va mijoz ko'paytiradigan tizim kerakmi? Telegram orqali yozing, bepul konsultatsiya beraman.</p>
+                <p style="margin-bottom: 25px; color: #a5b4fc;">Siz bilan hamkorlik qilishdan mamnunman!</p>
+                <a href="https://t.me/Javo_2010_hir" target="_blank" class="cta-btn" style="margin-top: 0;">Telegram: @Javo_2010_hir</a>
             </div>
         </section>
     </div>
